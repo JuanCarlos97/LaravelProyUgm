@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Votocandidato
  * 
+ * @property int $id
  * @property int $voto_id
  * @property int $candidato_id
  * @property int $votos
@@ -23,16 +24,17 @@ use Illuminate\Database\Eloquent\Model;
 class Votocandidato extends Model
 {
 	protected $table = 'votocandidato';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
+		'voto_id' => 'int',
 		'candidato_id' => 'int',
 		'votos' => 'int'
 	];
 
 	protected $fillable = [
 		'voto_id',
+		'candidato_id',
 		'votos'
 	];
 

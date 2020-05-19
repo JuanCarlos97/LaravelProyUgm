@@ -20,10 +20,6 @@
             <h1 class="animated rubberBand">Lista de casillas</h1>
         </div>
         <div class="col ml-5">
-        <a href="/proy_ugm/public/pdf"
-                    class="btn btn-success btn-block animated rubberBand">Generar PDF</a></td>
-        </div>
-        <div class="col ml-5">
             <a href="{{ route('casilla.create')}}"
                     class="btn btn-success btn-block animated rubberBand">CREAR CASILLA</a></td>
         </div>

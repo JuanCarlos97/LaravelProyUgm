@@ -37,6 +37,6 @@ class Candidato extends Model
 	public function votos()
 	{
 		return $this->belongsToMany(Voto::class, 'votocandidato')
-					->withPivot('votos');
+					->withPivot('id', 'votos');
 	}
 }

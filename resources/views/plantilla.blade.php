@@ -38,6 +38,8 @@
             <a class="nav-item nav-link" href="/proy_ugm/public/voto">Voto</a>
             <a class="nav-item nav-link" href="/proy_ugm/public/funcionariocasilla">FuncionarioCasilla</a>
             <a class="nav-item nav-link" href="/proy_ugm/public/imeiautorizado">ImeiAutorizados</a>
+            <a class="nav-item nav-link" href="/proy_ugm/public/votocandidato">Voto candidato</a>
+            <a class="nav-item nav-link" href="/proy_ugm/public/listado">Listado de votos</a>
         </div>
     </div>
     </nav>

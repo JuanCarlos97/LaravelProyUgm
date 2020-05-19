@@ -78,10 +78,11 @@
     */
 
     public function edit($voto_id) {
-        $candidato = Candidato::all();
+        $votos = Voto::all();
+        $candidatos = Candidato::all();
         $votocandidato = Votocandidato::find($voto_id);
         return view('votocandidato/edit',
-        compact('votocandidato','candidato'));
+        compact('votocandidato','candidatos','votos'));
     }
     /**
     * Update the specified resource in storage.

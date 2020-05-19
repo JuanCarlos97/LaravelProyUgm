@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('casilla', 'CasillaController');
+Route::resource('listado', 'ListadoController');
 Route::resource('candidato', 'Api\CandidatoController');
 Route::resource('funcionario', 'Api\FuncionarioController');
 Route::resource('eleccion', 'Api\EleccionController');
@@ -29,7 +30,7 @@ Route::resource('funcionariocasilla', 'Api\FuncionarioCasillaController');
 Route::resource('imeiautorizado', 'Api\imeiautorizadoController');
 
 #--- Generar PDF
-Route::get('pdf', 'CasillaController@generatepdf');
+Route::get('pdf', 'ListadoController@generatepdf');
 
 #--- Socialite facebook
 Route::get('/login','Auth\LoginController@index');

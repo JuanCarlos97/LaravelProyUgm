@@ -28,7 +28,6 @@ class Rol extends Model
 	protected $fillable = [
 		'descripcion'
 	];
-	
 
 	public function eleccioncomites()
 	{

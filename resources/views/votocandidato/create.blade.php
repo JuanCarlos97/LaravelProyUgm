@@ -26,17 +26,23 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                @csrf
+                <label for="voto_id">Elige la procedencia:</label>
+                <select id="voto_id" class="form-group" name="voto_id" >
+                    <optgroup label="Evidencia">
+                    @foreach($votos as $voto)
+                        <option for="voto_id" class="form-group" label="{{$voto->evidencia}}" name="voto_id">{{$voto->id}}</option>
+                    @endforeach
+                    </optgroup>
+                </select>
+            </div>
+
             {{ csrf_field() }}
             <div class="form-group">
                 @csrf
                 <label for="votos">Ingresa la cantidad de votos:</label>
                 <input type="number" class="form-control" name="votos" />
-            </div>
-            {{ csrf_field() }}
-            <div class="form-group">
-                @csrf
-                <label for="voto">numero 2 o 9:</label>
-                <input type="number" class="form-control" name="voto" />
             </div>
 
             <button type="submit" class="btn btn-info">Guardar</button>
