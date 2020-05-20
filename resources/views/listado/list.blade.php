@@ -4,6 +4,39 @@
 .uper {
     margin-top: 40px;
 }
+
+/* Primera grafica */
+
+.grafico {
+    background: #B1D632;
+    width: 1px;
+    height: 2em;
+}
+
+/* Segunda grafica */
+
+.graficoA {
+    background: #FF5733;
+    width: 1px;
+    height: 1em;
+}
+
+/* Tercera grafica */
+
+.graficoB {
+    background: #6700AE;
+    width: 2px;
+    height: 1em;
+    margin-top: -10px;
+}
+
+.text-cand {
+    position: absolute;
+    font-size: 9px;
+    color: #fff;
+    margin-top: -15px;
+    margin-left: -10px;
+}
 </style>
 <div class="uper">
     @if(session()->get('success'))
@@ -17,7 +50,7 @@
         </div>
         <div class="col ml-5">
             <a href="/proy_ugm/public/pdf" class="btn btn-info btn-block animated rubberBand">
-            <i class="fas fa-file-pdf mr-3"></i>Generar PDF</a></td>
+                <i class="fas fa-file-pdf mr-3"></i>Generar PDF</a></td>
         </div>
         <hr>
     </div>
@@ -26,8 +59,8 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">UBICACIÓN</th>
+                <th scope="col">ID</th>
+                <th scope="col">UBICACIÓN</th>
             </tr>
         </thead>
         <tbody>
@@ -45,11 +78,11 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre completo</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Foto</th>
-            <th scope="col">Perfil</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Perfil</th>
             </tr>
         </thead>
         <tbody>
@@ -70,9 +103,9 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre completo</th>
-            <th scope="col">Sexo (M o F):</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Sexo (M o F):</th>
             </tr>
         </thead>
         <tbody>
@@ -92,14 +125,14 @@
         <table class="table table-dark animated fadeInUp">
             <thead>
                 <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Periodo</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Fecha de apertura</th>
-                <th scope="col">Hora de apertura</th>
-                <th scope="col">Fecha de cierre</th>
-                <th scope="col">Hora de cierra</th>
-                <th scope="col">Observaciones</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Periodo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Fecha de apertura</th>
+                    <th scope="col">Hora de apertura</th>
+                    <th scope="col">Fecha de cierre</th>
+                    <th scope="col">Hora de cierra</th>
+                    <th scope="col">Observaciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,8 +157,8 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">DESCRIPCIÓN</th>
+                <th scope="col">ID</th>
+                <th scope="col">DESCRIPCIÓN</th>
             </tr>
         </thead>
         <tbody>
@@ -143,10 +176,10 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">ELECCION</th>
-            <th scope="col">FUNCIONARIO</th>
-            <th scope="col">ROL</th>
+                <th scope="col">ID</th>
+                <th scope="col">ELECCION</th>
+                <th scope="col">FUNCIONARIO</th>
+                <th scope="col">ROL</th>
             </tr>
         </thead>
         <tbody>
@@ -154,30 +187,30 @@
             <!-- RECORRIDO DE TABLA eleccioncomite -->
             @foreach($eleccionescomite as $eleccioncomite)
 
-                <!-- RECORRIDO DE TABLA eleccion para estetica web -->
-                @foreach($elecciones as $eleccion)
-                    @if($eleccioncomite->eleccion_id === $eleccion->id)
-                        @php ($periodo = $eleccion->periodo)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA eleccion para estetica web -->
+            @foreach($elecciones as $eleccion)
+            @if($eleccioncomite->eleccion_id === $eleccion->id)
+            @php ($periodo = $eleccion->periodo)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA funcionario para estetica web -->
-                @foreach($funcionarios as $funcionario)
-                    @if($eleccioncomite->funcionario_id === $funcionario->id)
-                        @php($name = $funcionario->nombrecompleto)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA funcionario para estetica web -->
+            @foreach($funcionarios as $funcionario)
+            @if($eleccioncomite->funcionario_id === $funcionario->id)
+            @php($name = $funcionario->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA rol para estetica web -->
-                @foreach($roles as $rol)
-                    @if($eleccioncomite->rol_id === $rol->id)
-                        @php($namerol = $rol->descripcion)
-                        @break;
-                    @endif
-                @endforeach
-            
+            <!-- RECORRIDO DE TABLA rol para estetica web -->
+            @foreach($roles as $rol)
+            @if($eleccioncomite->rol_id === $rol->id)
+            @php($namerol = $rol->descripcion)
+            @break;
+            @endif
+            @endforeach
+
 
             <tr>
                 <td>{{$eleccioncomite->id}}</td>
@@ -194,32 +227,32 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">ELECCION</th>
-            <th scope="col">CASILLA</th>
-            <th scope="col">EVIDENCIA</th>
+                <th scope="col">ID</th>
+                <th scope="col">ELECCION</th>
+                <th scope="col">CASILLA</th>
+                <th scope="col">EVIDENCIA</th>
             </tr>
         </thead>
         <tbody>
 
             <!-- RECORRIDO DE TABLA eleccioncomite -->
             @foreach($votos as $voto)
-                <!-- RECORRIDO DE TABLA eleccion para estetica web -->
-                @foreach($elecciones as $eleccion)
-                    @if($voto->eleccion_id === $eleccion->id)
-                        @php ($periodo = $eleccion->periodo)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA eleccion para estetica web -->
+            @foreach($elecciones as $eleccion)
+            @if($voto->eleccion_id === $eleccion->id)
+            @php ($periodo = $eleccion->periodo)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA casilla para estetica web -->
-                @foreach($casillas as $casilla)
-                    @if($voto->casilla_id === $casilla->id)
-                        @php($name = $casilla->ubicacion)
-                        @break;
-                    @endif
-                @endforeach
-            
+            <!-- RECORRIDO DE TABLA casilla para estetica web -->
+            @foreach($casillas as $casilla)
+            @if($voto->casilla_id === $casilla->id)
+            @php($name = $casilla->ubicacion)
+            @break;
+            @endif
+            @endforeach
+
 
             <tr>
                 <td>{{$voto->id}}</td>
@@ -236,49 +269,49 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">FUNCIONARIO</th>
-            <th scope="col">CASILLA</th>
-            <th scope="col">ROL</th>
-            <th scope="col">ELECCIÓN</th>
+                <th scope="col">ID</th>
+                <th scope="col">FUNCIONARIO</th>
+                <th scope="col">CASILLA</th>
+                <th scope="col">ROL</th>
+                <th scope="col">ELECCIÓN</th>
             </tr>
         </thead>
         <tbody>
 
             <!-- RECORRIDO DE TABLA funcionariocasilla -->
             @foreach($funcionarioscasilla as $funcionariocasilla)
-                <!-- RECORRIDO DE TABLA funcionario para estetica web -->
-                @foreach($funcionarios as $funcionario)
-                    @if($funcionariocasilla->funcionario_id === $funcionario->id)
-                        @php ($nombre = $funcionario->nombrecompleto)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA funcionario para estetica web -->
+            @foreach($funcionarios as $funcionario)
+            @if($funcionariocasilla->funcionario_id === $funcionario->id)
+            @php ($nombre = $funcionario->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA casilla para estetica web -->
-                @foreach($casillas as $casilla)
-                    @if($funcionariocasilla->casilla_id === $casilla->id)
-                        @php($lacasilla = $casilla->ubicacion)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA casilla para estetica web -->
+            @foreach($casillas as $casilla)
+            @if($funcionariocasilla->casilla_id === $casilla->id)
+            @php($lacasilla = $casilla->ubicacion)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA rol para estetica web -->
-                @foreach($roles as $rol)
-                    @if($funcionariocasilla->rol_id === $rol->id)
-                        @php($elrol = $rol->descripcion)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA rol para estetica web -->
+            @foreach($roles as $rol)
+            @if($funcionariocasilla->rol_id === $rol->id)
+            @php($elrol = $rol->descripcion)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA eleccion para estetica web -->
-                @foreach($elecciones as $eleccion)
-                    @if($funcionariocasilla->eleccion_id === $eleccion->id)
-                        @php($laeleccion = $eleccion->periodo)
-                        @break;
-                    @endif
-                @endforeach
-            
+            <!-- RECORRIDO DE TABLA eleccion para estetica web -->
+            @foreach($elecciones as $eleccion)
+            @if($funcionariocasilla->eleccion_id === $eleccion->id)
+            @php($laeleccion = $eleccion->periodo)
+            @break;
+            @endif
+            @endforeach
+
 
             <tr>
                 <td>{{$funcionariocasilla->id}}</td>
@@ -296,40 +329,40 @@
     <table class="table table-dark animated fadeInUp">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">FUNCIONARIO</th>
-            <th scope="col">ELECCIÓN</th>
-            <th scope="col">CASILLA</th>
-            <th scope="col">IMEI</th>
+                <th scope="col">ID</th>
+                <th scope="col">FUNCIONARIO</th>
+                <th scope="col">ELECCIÓN</th>
+                <th scope="col">CASILLA</th>
+                <th scope="col">IMEI</th>
             </tr>
         </thead>
         <tbody>
 
             <!-- RECORRIDO DE TABLA imeiautorizado -->
             @foreach($imeisautorizados as $imeiautorizado)
-                <!-- RECORRIDO DE TABLA funcionario para estetica web -->
-                @foreach($funcionarios as $funcionario)
-                    @if($imeiautorizado->funcionario_id === $funcionario->id)
-                        @php ($nombre = $funcionario->nombrecompleto)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA funcionario para estetica web -->
+            @foreach($funcionarios as $funcionario)
+            @if($imeiautorizado->funcionario_id === $funcionario->id)
+            @php ($nombre = $funcionario->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA eleccion para estetica web -->
-                @foreach($elecciones as $eleccion)
-                    @if($imeiautorizado->eleccion_id === $eleccion->id)
-                        @php($laeleccion = $eleccion->periodo)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA eleccion para estetica web -->
+            @foreach($elecciones as $eleccion)
+            @if($imeiautorizado->eleccion_id === $eleccion->id)
+            @php($laeleccion = $eleccion->periodo)
+            @break;
+            @endif
+            @endforeach
 
-                <!-- RECORRIDO DE TABLA casilla para estetica web -->
-                @foreach($casillas as $casilla)
-                    @if($imeiautorizado->casilla_id === $casilla->id)
-                        @php($lacasilla = $casilla->ubicacion)
-                        @break;
-                    @endif
-                @endforeach
+            <!-- RECORRIDO DE TABLA casilla para estetica web -->
+            @foreach($casillas as $casilla)
+            @if($imeiautorizado->casilla_id === $casilla->id)
+            @php($lacasilla = $casilla->ubicacion)
+            @break;
+            @endif
+            @endforeach
 
 
             <tr>
@@ -348,23 +381,23 @@
     <table class="table table-dark">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">CANDIDATO</th>
-            <th scope="col">CANTIDAD DE VOTOS</th>
+                <th scope="col">ID</th>
+                <th scope="col">CANDIDATO</th>
+                <th scope="col">CANTIDAD DE VOTOS</th>
             </tr>
         </thead>
         <tbody>
 
             <!-- RECORRIDO DE TABLA  -->
             @foreach($votoscandidato as $votocandidato)
-                <!-- RECORRIDO DE TABLA  -->
-                @foreach($candidatos as $candidato)
-                    @if($votocandidato->candidato_id === $candidato->id)
-                        @php ($cand = $candidato->nombrecompleto)
-                        @break;
-                    @endif
-                @endforeach
-            
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+            @if($votocandidato->candidato_id === $candidato->id)
+            @php ($cand = $candidato->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
+
 
             <tr>
                 <td>{{$votocandidato->voto_id}}</td>
@@ -377,6 +410,70 @@
 
     <hr>
     <h2>Grafica</h2>
+    <div class="container">
+        <!-- RECORRIDO DE TABLA  -->
+        @foreach($votoscandidato as $votocandidato)
+        <div class="row">
 
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+            @if($votocandidato->candidato_id === $candidato->id)
+            @php ($cand = $candidato->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
+
+            @for ($i = 0; $i < $votocandidato->votos; $i++)
+                <div class="grafico"></div>
+                @endfor
+                <span>{{ $cand }}</span>
+        </div>
+        @endforeach
+    </div>
+    <h2>Grafica 2</h2>
+    <div class="container">
+        <!-- RECORRIDO DE TABLA  -->
+        @foreach($votoscandidato as $votocandidato)
+        <div class="row">
+
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+            @if($votocandidato->candidato_id === $candidato->id)
+            @php ($cand = $candidato->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
+
+            @for ($i = 0; $i < $votocandidato->votos; $i++)
+                <div class="graficoA"></div>
+                @endfor
+        </div>
+        <span>{{$cand}} tiene: {{$votocandidato->votos}} votos</span>
+        <br>
+        @endforeach
+    </div>
+
+    <h2>Grafica 3</h2>
+    <div class="container">
+        <!-- RECORRIDO DE TABLA  -->
+        @foreach($votoscandidato as $votocandidato)
+        <div class="row">
+
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+            @if($votocandidato->candidato_id === $candidato->id)
+            @php ($cand = $candidato->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
+
+            @for ($i = 0; $i < $votocandidato->votos; $i++)
+                <div class="graficoB"></div>
+                @endfor
+        </div>
+        <span class="text-cand">{{$cand}} | {{$votocandidato->votos}} votos</span>
+        <br>
+        @endforeach
+    </div>
 </div>
 @endsection
