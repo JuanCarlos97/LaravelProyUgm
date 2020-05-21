@@ -15,23 +15,23 @@
     @endif
     <div class="row">
         <div class="col">
-            <h1 class="animated rubberBand">Lista de votos</h1>
+            <h1 class="animated rubberBand">Votos</h1>
         </div>
         <div class="col ml-5">
             <a href="{{ route('voto.create')}}"
-                    class="btn btn-success btn-block animated rubberBand">NUEVO VOTO</a></td>
+                    class="btn btn-dark btn-block btn-sm mt-3 animated rubberBand">Nuevo voto</a></td>
         </div>
         <hr>
     </div>
     
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">ELECCION</th>
             <th scope="col">CASILLA</th>
             <th scope="col">EVIDENCIA</th>
-            <td colspan="2">Acciones</td>
+            <th colspan="2">Controles</th>
             </tr>
         </thead>
         <tbody>
@@ -61,14 +61,14 @@
                 <td>{{$name}}</td>
                 <td>{{$voto->evidencia}}</td>
                 <td><a href="{{ route('voto.edit', $voto->id)}}"
-                class="btn btn-primary">Editar</a></td>
+                class="btn btn-primary"><i class="fas fa-pen"></i></a></td>
                 <td>
                     <form action="{{ route('voto.destroy', $voto->id)}}"
                     method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"
-                        onclick="return confirm('Esta seguro de borrar {{$voto->id}}')">Eliminar</button>
+                        onclick="return confirm('Esta seguro de borrar {{$voto->id}}')"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

@@ -17,20 +17,20 @@
     
     <div class="row">
         <div class="col">
-            <h1 class="animated rubberBand">Lista de casillas</h1>
+            <h1 class="animated rubberBand">Casillas</h1>
         </div>
-        <div class="col ml-5">
+        <div class="col">
             <a href="{{ route('casilla.create')}}"
-                    class="btn btn-success btn-block animated rubberBand">CREAR CASILLA</a></td>
+                    class="btn btn-dark btn-sm mt-3 btn-block animated rubberBand">Nueva casilla</a></td>
         </div>
         <hr>
     </div>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">UBICACIÓN</th>
-            <td colspan="2">Acciones</td>
+            <th scope="col">Controles</th>
             </tr>
         </thead>
         <tbody>
@@ -39,14 +39,24 @@
                 <td>{{$casilla->id}}</td>
                 <td>{{$casilla->ubicacion}}</td>
                 <td><a href="{{ route('casilla.edit', $casilla->id)}}"
-                class="btn btn-primary">Editar</a></td>
+                class="btn btn-primary">
+
+                <i class="fas fa-pen"></i>
+
+
+                </a></td>
                 <td>
                     <form action="{{ route('casilla.destroy', $casilla->id)}}"
                     method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"
-                        onclick="return confirm('Esta seguro de borrar {{$casilla->ubicacion}}')">Eliminar</button>
+                        onclick="return confirm('Esta seguro de borrar {{$casilla->ubicacion}}')">
+
+                        
+                        <i class="fas fa-trash-alt"></i>
+                        
+                        </button>
                     </form>
                 </td>
             </tr>

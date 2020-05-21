@@ -49,14 +49,14 @@
             <h1 class="animated rubberBand">Listado de tablas</h1>
         </div>
         <div class="col ml-5">
-            <a href="/proy_ugm/public/pdf" class="btn btn-info btn-block animated rubberBand">
-                <i class="fas fa-file-pdf mr-3"></i>Generar PDF</a></td>
+            <a href="/proy_ugm/public/pdf" class="btn btn-danger btn-block btn-sm mt-3 animated rubberBand">
+            <i class="fas fa-print"></i>  Generar PDF</a></td>
         </div>
         <hr>
     </div>
     <hr>
     <h2>Casillas</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -75,7 +75,7 @@
 
     <hr>
     <h2>Candidatos</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -100,7 +100,7 @@
 
     <hr>
     <h2>Funcionarios</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -122,8 +122,8 @@
     <hr>
     <h2>Elección</h2>
     <div class="table-responsive">
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+    <table class="table table-striped table-dark animated fadeInUp">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Periodo</th>
@@ -154,7 +154,7 @@
 
     <hr>
     <h2>Rol</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -173,7 +173,7 @@
 
     <hr>
     <h2>Elección de comite</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -224,7 +224,7 @@
 
     <hr>
     <h2>Votos</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -266,7 +266,7 @@
 
     <hr>
     <h2>Funcionario casilla</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -326,7 +326,7 @@
 
     <hr>
     <h2>Imei autorizados</h2>
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -378,7 +378,7 @@
 
     <hr>
     <h2>Votos a los candidatos</h2>
-    <table class="table table-dark">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
                 <th scope="col">ID</th>

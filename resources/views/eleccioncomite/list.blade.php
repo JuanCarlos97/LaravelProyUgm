@@ -15,23 +15,23 @@
     @endif
     <div class="row">
         <div class="col">
-            <h1 class="animated rubberBand">Lista de la elección de comites</h1>
+            <h1 class="animated rubberBand">Elección de comites</h1>
         </div>
         <div class="col ml-5">
             <a href="{{ route('eleccioncomite.create')}}"
-                    class="btn btn-success btn-block animated rubberBand">CREAR UNA ELECCIÓN DE COMITES</a></td>
+                    class="btn btn-dark btn-block btn-sm mt-3 animated rubberBand">Nuevo registro</a></td>
         </div>
         <hr>
     </div>
     
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">ELECCION</th>
             <th scope="col">FUNCIONARIO</th>
             <th scope="col">ROL</th>
-            <td colspan="2">Acciones</td>
+            <th colspan="2">Controles</th>
             </tr>
         </thead>
         <tbody>
@@ -70,14 +70,14 @@
                 <td>{{$name}}</td>
                 <td>{{$namerol}}</td>
                 <td><a href="{{ route('eleccioncomite.edit', $eleccioncomite->id)}}"
-                class="btn btn-primary">Editar</a></td>
+                class="btn btn-primary"><i class="fas fa-pen"></i></a></td>
                 <td>
                     <form action="{{ route('eleccioncomite.destroy', $eleccioncomite->id)}}"
                     method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"
-                        onclick="return confirm('Esta seguro de borrar {{$eleccioncomite->id}}')">Eliminar</button>
+                        onclick="return confirm('Esta seguro de borrar {{$eleccioncomite->id}}')"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

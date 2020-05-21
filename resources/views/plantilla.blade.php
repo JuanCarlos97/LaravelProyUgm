@@ -29,17 +29,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/proy_ugm/public/casilla">Casillas <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/candidato">Candidatos</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/funcionario">Funcionarios</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/eleccion">Elección</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/rol">Rol</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/eleccioncomite">Eleccion de comite</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/voto">Voto</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/funcionariocasilla">FuncionarioCasilla</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/imeiautorizado">ImeiAutorizados</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/votocandidato">Voto candidato</a>
-            <a class="nav-item nav-link" href="/proy_ugm/public/listado">Listado de votos</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/casilla">Casillas <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/candidato">Candidatos</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/funcionario">Funcionarios</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/eleccion">Elección</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/rol">Rol</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/eleccioncomite">Eleccion de comite</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/voto">Voto</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/funcionariocasilla">FuncionarioCasilla</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/imeiautorizado">ImeiAutorizados</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/votocandidato">Voto candidato</a>
+            <a class="nav-item nav-link" href="/proy_ugmTono/public/listado">Listado de votos</a>
         </div>
     </div>
     </nav>

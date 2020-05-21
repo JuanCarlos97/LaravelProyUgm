@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Luis Hernandez Juan Carlos Programación en Red</title>
+        <title>Elecciones</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,20 +81,20 @@
 
             <div class="content">
             <div class="title m-b-md">
-                    Luis Hernandez Juan Carlos
+                    Antonio Elí Ruiz Mendoza
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost:8000/login">Login</a>
-                    <a href="http://localhost:8000/casilla">Casilla</a>
-                    <a href="http://localhost:8000/candidato">Candidatos</a>
-                    <a href="http://localhost:8000/funcionario">Funcionarios</a>
-                    <a href="http://localhost:8000/eleccion">Eleccion</a>
-                    <a href="http://localhost:8000/rol">Rol</a>
-                    <a href="http://localhost:8000/eleccioncomite">Eleccion comite</a>
-                    <a href="http://localhost:8000/voto">Voto</a>
-                    <a href="http://localhost:8000/funcionariocasilla">Funcionario casilla</a>
-                    <a href="http://localhost:8000/imeiautorizado">Imei</a>
+                    <a href="http://localhost/proy_ugmTono/public/login">Login</a>
+                    <a href="http://localhost/proy_ugmTono/public/casilla">Casilla</a>
+                    <a href="http://localhost/proy_ugmTono/public/candidato">Candidatos</a>
+                    <a href="http://localhost/proy_ugmTono/public/funcionario">Funcionarios</a>
+                    <a href="http://localhost/proy_ugmTono/public/eleccion">Eleccion</a>
+                    <a href="http://localhost/proy_ugmTono/public/rol">Rol</a>
+                    <a href="http://localhost/proy_ugmTono/public/eleccioncomite">Eleccion comite</a>
+                    <a href="http://localhost/proy_ugmTono/public/voto">Voto</a>
+                    <a href="http://localhost/proy_ugmTono/public/funcionariocasilla">Funcionario casilla</a>
+                    <a href="http://localhost/proy_ugmTono/public/imeiautorizado">Imei</a>
                 </div>
             </div>
         </div>

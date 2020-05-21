@@ -15,22 +15,22 @@
     @endif
     <div class="row">
         <div class="col">
-            <h1>Votos al candidato</h1>
+            <h1>Votos de cada candidato</h1>
         </div>
         <div class="col ml-5">
             <a href="{{ route('votocandidato.create')}}"
-                    class="btn btn-success btn-block">NUEVO REGISTRO</a></td>
+                    class="btn btn-dark btn-block btn-sm mt-3 ">Nuevo registro</a></td>
         </div>
         <hr>
     </div>
     
-    <table class="table table-dark">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">CANDIDATO</th>
             <th scope="col">CANTIDAD DE VOTOS</th>
-            <td colspan="2">Acciones</td>
+            <th colspan="2">Controles</th>
             </tr>
         </thead>
         <tbody>
@@ -51,14 +51,14 @@
                 <td>{{$cand}}</td>
                 <td>{{$votocandidato->votos}}</td>
                 <td><a href="{{ route('votocandidato.edit', $votocandidato->voto_id)}}"
-                class="btn btn-primary">Editar</a></td>
+                class="btn btn-primary"><i class="fas fa-pen"></i></a></td>
                 <td>
                     <form action="{{ route('votocandidato.destroy', $votocandidato->voto_id)}}"
                     method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"
-                        onclick="return confirm('Esta seguro de borrar {{$candidato->nombrecompleto}}')">Eliminar</button>
+                        onclick="return confirm('Esta seguro de borrar {{$candidato->nombrecompleto}}')"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

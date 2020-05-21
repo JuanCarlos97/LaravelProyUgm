@@ -15,16 +15,16 @@
     @endif
     <div class="row">
         <div class="col">
-            <h1 class="animated rubberBand">Lista de imei autorizados</h1>
+            <h1 class="animated rubberBand">Imei autorizados</h1>
         </div>
         <div class="col ml-5">
             <a href="{{ route('imeiautorizado.create')}}"
-                    class="btn btn-success btn-block animated rubberBand">NUEVO IMEI</a></td>
+                    class="btn btn-dark btn-block btn-sm mt-3 animated rubberBand">Nuevo imei</a></td>
         </div>
         <hr>
     </div>
     
-    <table class="table table-dark animated fadeInUp">
+    <table class="table table-striped table-dark animated fadeInUp">
         <thead>
             <tr>
             <th scope="col">ID</th>
@@ -33,7 +33,7 @@
             <th scope="col">CASILLA</th>
             <th scope="col">IMEI</th>
             
-            <td colspan="2">Acciones</td>
+            <th colspan="2">Controles</th>
             </tr>
         </thead>
         <tbody>
@@ -73,14 +73,14 @@
                 <td>{{$imeiautorizado->imei}}</td>
                 
                 <td><a href="{{ route('imeiautorizado.edit', $imeiautorizado->id)}}"
-                class="btn btn-primary">Editar</a></td>
+                class="btn btn-primary"><i class="fas fa-pen"></i></a></td>
                 <td>
                     <form action="{{ route('imeiautorizado.destroy', $imeiautorizado->id)}}"
                     method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"
-                        onclick="return confirm('Esta seguro de borrar {{$imeiautorizado->id}}')">Eliminar</button>
+                        onclick="return confirm('Esta seguro de borrar {{$imeiautorizado->id}}')"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>
