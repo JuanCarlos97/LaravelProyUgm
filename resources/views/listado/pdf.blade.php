@@ -23,11 +23,29 @@
         top: 0cm;
         left: 0cm;
         right: 0cm;
-        height: 2cm;
-        background-color: #2a0927;
+        height: 2.5cm;
+        background-color: #00796A;
         color: white;
-        text-align: center;
         line-height: 30px;
+    }
+
+    header .imagen {
+        position: fixed;
+        height: 1.5cm;
+        margin-left: 19cm;
+        margin-top: 0.5cm;
+    }
+
+    header h4 {
+        position: fixed;
+        margin-top: 0.5cm;
+        margin-left: 0.2cm;
+    }
+
+    header h5 {
+        position: fixed;
+        margin-top: 1.5cm;
+        margin-left: 0.2cm;
     }
 
     footer {
@@ -36,65 +54,12 @@
         left: 0cm;
         right: 0cm;
         height: 2cm;
-        background-color: #2a0927;
+        background-color: #00796A;
         color: white;
         text-align: center;
         line-height: 35px;
     }
 
-    /* Primera grafica */
-
-    .grafico {
-        position: absolute;
-        width: 1cm;
-        padding: 2px;
-        margin-left: 5cm;
-    }
-
-    .grafico .barra {
-        display: block;
-        position: relative;
-        background: #B1D632;
-        text-align: center;
-        color: #333;
-        width: 1cm;
-        line-height: 2em;
-        font-size: 9px;
-        border: 1px solid #000;
-        margin-top: 2cm;
-    }
-
-    .grafico .barra span {
-        position: absolute;
-        left: 1em;
-    }
-
-    .candidato-text {
-        font-size: 8px;
-        text-align: center;
-    }
-
-    /* Segunda grafica */
-
-    .graficoA {
-        position: relative; /* IE is dumb */
-        width: 200px;
-        padding: 2px;
-    }
-    .graficoA .barra {
-        display: block;
-        position: relative;
-        background: #FF5733;
-        text-align: center;
-        color: #333;
-        height: 1em;
-        line-height: 2em;
-    }
-    .graficoA .barra span {
-        position: absolute; left: 1em;
-    }
-
-    /* Tercera grafica */
 
     .graficoB {
         position: relative; /* IE is dumb */
@@ -104,10 +69,11 @@
     .graficoB .barra {
         display: block;
         position: relative;
-        background: #6700AE;
+        background: #00AE5A;
         color: #fff;
         height: 2em;
         line-height: 2em;
+        text-align: center;
         font-size: 9px;
     }
     .graficoB .barra span {
@@ -118,10 +84,13 @@
 
 <body>
     <header>
-        <h1>Daisy Diaz Zamora</h1>
+        <img class="imagen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Circle-icons-dev.svg/1200px-Circle-icons-dev.svg.png">
+        <h4>AntonioDev</h4>
+        <h5>Universidad del Golfo de Mexico Campus Oaxaca</h5>
     </header>
 
     <main>
+
         <h2>Grafica</h2>
 
         <!-- RECORRIDO DE TABLA  -->
@@ -135,60 +104,35 @@
                 @endif
             @endforeach
 
-            <div class="grafico">
-                <strong class="barra"
-                    style="height: <?php echo $votocandidato->votos; ?>;">
-                            {{$votocandidato->votos}}
-                </strong><span class="candidato-text">{{$cand}}</span></div>
-        ------
-        
-        @endforeach
-        <div class="page-break"></div>
-        <h2>Grafica 2</h2>
-
-        <!-- RECORRIDO DE TABLA  -->
-        @foreach($votoscandidato as $votocandidato)
-
-            <!-- RECORRIDO DE TABLA  -->
-            @foreach($candidatos as $candidato)
-                @if($votocandidato->candidato_id === $candidato->id)
-                    @php ($cand = $candidato->nombrecompleto)
-                    @break;
-                @endif
-            @endforeach
-
-            <div class="graficoA"><strong class="barra" style="width: <?php echo $votocandidato->votos; ?>;">
-                </strong><span class="candidato-text">{{$cand}} tiene: {{$votocandidato->votos}} votos</span>
-            </div>
-        
-        @endforeach
-
-        <div class="page-break"></div>
-
-        <h2>Grafica 3</h2>
-
-        <!-- RECORRIDO DE TABLA  -->
-        @foreach($votoscandidato as $votocandidato)
-
-            <!-- RECORRIDO DE TABLA  -->
-            @foreach($candidatos as $candidato)
-                @if($votocandidato->candidato_id === $candidato->id)
-                    @php ($cand = $candidato->nombrecompleto)
-                    @break;
-                @endif
-            @endforeach
-
             <div class="graficoB"><strong class="barra" style="width: <?php echo $votocandidato->votos; ?>;">
-            {{$cand}} | {{$votocandidato->votos}} votos
+                {{$votocandidato->votos}} Votos
                 </strong>
             </div>
         
         @endforeach
+<hr>
+        <!-- RECORRIDO DE TABLA  -->
+        @foreach($votoscandidato as $votocandidato)
 
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+                @if($votocandidato->candidato_id === $candidato->id)
+                    @php ($cand = $candidato->nombrecompleto)
+                    @break;
+                @endif
+            @endforeach
+
+            
+            <p>
+            {{$cand}} | {{$votocandidato->votos}} votos
+            </p>
+        
+        @endforeach
+<hr>
         <div class="page-break"></div>
         <h2>Casillas</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">UBICACIÓN</th>
@@ -206,8 +150,8 @@
 
         <div class="page-break"></div>
         <h2>Candidatos</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre completo</th>
@@ -231,8 +175,8 @@
 
         <div class="page-break"></div>
         <h2>Funcionarios</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre completo</th>
@@ -253,8 +197,8 @@
         <div class="page-break"></div>
         <h2>Elección</h2>
         <div class="table-responsive">
-            <table class="table table-dark animated fadeInUp">
-                <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Periodo</th>
@@ -285,8 +229,8 @@
 
         <div class="page-break"></div>
         <h2>Rol</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">DESCRIPCIÓN</th>
@@ -304,8 +248,8 @@
 
         <div class="page-break"></div>
         <h2>Elección de comite</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">ELECCION</th>
@@ -355,8 +299,8 @@
 
         <div class="page-break"></div>
         <h2>Votos</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">ELECCION</th>
@@ -397,8 +341,8 @@
 
         <div class="page-break"></div>
         <h2>Funcionario casilla</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">FUNCIONARIO</th>
@@ -457,8 +401,8 @@
 
         <div class="page-break"></div>
         <h2>Imei autorizados</h2>
-        <table class="table table-dark animated fadeInUp">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">FUNCIONARIO</th>
@@ -509,8 +453,8 @@
 
         <div class="page-break"></div>
         <h2>Votos a los candidatos</h2>
-        <table class="table table-dark">
-            <thead>
+        <table class="table table-striped table-dark">
+        <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">CANDIDATO</th>
@@ -542,7 +486,8 @@
     </main>
 
     <footer>
-        <h1>www.daysi.net</h1>
+        <h5>www.antoniodev.com.mx</h5>
+        <h5>8o Lic. Informática</h5>
     </footer>
 </body>
 

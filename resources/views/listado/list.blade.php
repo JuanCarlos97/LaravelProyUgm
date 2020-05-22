@@ -5,26 +5,9 @@
     margin-top: 40px;
 }
 
-/* Primera grafica */
-
-.grafico {
-    background: #B1D632;
-    width: 1px;
-    height: 2em;
-}
-
-/* Segunda grafica */
-
-.graficoA {
-    background: #FF5733;
-    width: 1px;
-    height: 1em;
-}
-
-/* Tercera grafica */
 
 .graficoB {
-    background: #6700AE;
+    background: #00AE5A;
     width: 2px;
     height: 1em;
     margin-top: -10px;
@@ -35,6 +18,11 @@
     font-size: 9px;
     color: #fff;
     margin-top: -15px;
+    margin-left: -10px;
+}
+
+.text-cand2 {
+    font-size: 16px;
     margin-left: -10px;
 }
 </style>
@@ -424,56 +412,30 @@
             @endforeach
 
             @for ($i = 0; $i < $votocandidato->votos; $i++)
-                <div class="grafico"></div>
-                @endfor
-                <span>{{ $cand }}</span>
-        </div>
-        @endforeach
-    </div>
-    <h2>Grafica 2</h2>
-    <div class="container">
-        <!-- RECORRIDO DE TABLA  -->
-        @foreach($votoscandidato as $votocandidato)
-        <div class="row">
-
-            <!-- RECORRIDO DE TABLA  -->
-            @foreach($candidatos as $candidato)
-            @if($votocandidato->candidato_id === $candidato->id)
-            @php ($cand = $candidato->nombrecompleto)
-            @break;
-            @endif
-            @endforeach
-
-            @for ($i = 0; $i < $votocandidato->votos; $i++)
-                <div class="graficoA"></div>
-                @endfor
-        </div>
-        <span>{{$cand}} tiene: {{$votocandidato->votos}} votos</span>
-        <br>
-        @endforeach
-    </div>
-
-    <h2>Grafica 3</h2>
-    <div class="container">
-        <!-- RECORRIDO DE TABLA  -->
-        @foreach($votoscandidato as $votocandidato)
-        <div class="row">
-
-            <!-- RECORRIDO DE TABLA  -->
-            @foreach($candidatos as $candidato)
-            @if($votocandidato->candidato_id === $candidato->id)
-            @php ($cand = $candidato->nombrecompleto)
-            @break;
-            @endif
-            @endforeach
-
-            @for ($i = 0; $i < $votocandidato->votos; $i++)
                 <div class="graficoB"></div>
                 @endfor
         </div>
-        <span class="text-cand">{{$cand}} | {{$votocandidato->votos}} votos</span>
+        <span class="text-cand">{{$votocandidato->votos}} Votos</span>
         <br>
         @endforeach
+<hr>
+        <!-- RECORRIDO DE TABLA  -->
+        @foreach($votoscandidato as $votocandidato)
+        <div class="row">
+
+            <!-- RECORRIDO DE TABLA  -->
+            @foreach($candidatos as $candidato)
+            @if($votocandidato->candidato_id === $candidato->id)
+            @php ($cand = $candidato->nombrecompleto)
+            @break;
+            @endif
+            @endforeach
+
+        </div>
+        <span class="text-cand2">{{$cand}} | {{$votocandidato->votos}} Votos</span>
+        <br>
+        @endforeach
+        <hr>
     </div>
 </div>
 @endsection

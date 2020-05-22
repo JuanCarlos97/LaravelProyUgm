@@ -75,6 +75,6 @@ class ListadoController extends Controller
         $pdf = PDF::loadHTML($html);
     
         // Descargamos el archivo
-        return $pdf->download('listado de elecciones.pdf');
+        return $pdf->download('Elecciones.pdf');
     }
 }

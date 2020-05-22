@@ -85,16 +85,16 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost/proy_ugmTono/public/login">Login</a>
-                    <a href="http://localhost/proy_ugmTono/public/casilla">Casilla</a>
-                    <a href="http://localhost/proy_ugmTono/public/candidato">Candidatos</a>
-                    <a href="http://localhost/proy_ugmTono/public/funcionario">Funcionarios</a>
-                    <a href="http://localhost/proy_ugmTono/public/eleccion">Eleccion</a>
-                    <a href="http://localhost/proy_ugmTono/public/rol">Rol</a>
-                    <a href="http://localhost/proy_ugmTono/public/eleccioncomite">Eleccion comite</a>
-                    <a href="http://localhost/proy_ugmTono/public/voto">Voto</a>
-                    <a href="http://localhost/proy_ugmTono/public/funcionariocasilla">Funcionario casilla</a>
-                    <a href="http://localhost/proy_ugmTono/public/imeiautorizado">Imei</a>
+                    <a href="http://localhost/proy_ugm/public/login">Login</a>
+                    <a href="http://localhost/proy_ugm/public/casilla">Casilla</a>
+                    <a href="http://localhost/proy_ugm/public/candidato">Candidatos</a>
+                    <a href="http://localhost/proy_ugm/public/funcionario">Funcionarios</a>
+                    <a href="http://localhost/proy_ugm/public/eleccion">Eleccion</a>
+                    <a href="http://localhost/proy_ugm/public/rol">Rol</a>
+                    <a href="http://localhost/proy_ugm/public/eleccioncomite">Eleccion comite</a>
+                    <a href="http://localhost/proy_ugm/public/voto">Voto</a>
+                    <a href="http://localhost/proy_ugm/public/funcionariocasilla">Funcionario casilla</a>
+                    <a href="http://localhost/proy_ugm/public/imeiautorizado">Imei</a>
                 </div>
             </div>
         </div>
